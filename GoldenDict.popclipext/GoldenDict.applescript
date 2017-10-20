@@ -1,14 +1,16 @@
-set appName to "GoldenDict"
+tell application "Finder"
+	POSIX path of (application file id "org.goldendict" as alias)
+end tell
 
-if application appName is running then
-	tell application id (id of application appName)
-		do shell script "/Applications/GoldenDict.app/Contents/MacOS/GoldenDict '{popclip text}'"
+set appPath to result
+
+if application id "org.goldendict" is running then
+	tell application id "org.goldendict"
+		do shell script (appPath & "/Contents/MacOS/GoldenDict '{popclip text}'")
 	end tell
-	return "Running"
 else
-	tell application "GoldenDict"
+	tell application id "org.goldendict"
 		activate
 	end tell
-	do shell script "/Applications/GoldenDict.app/Contents/MacOS/GoldenDict '{popclip text}'"
-	return "Not running"
+	do shell script (appPath & "/Contents/MacOS/GoldenDict '{popclip text}'")
 end if
