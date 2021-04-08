@@ -1,4 +1,4 @@
-PopClip extension for translating selected word in GoldenDict popup
+Simple PopClip extension that translates a selected word in GoldenDict popup.
 
 Download [GoldenDict.popclipextz](https://github.com/ww7/Popclip-Extension-GoldenDict/releases)
 
