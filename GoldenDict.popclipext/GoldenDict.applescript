@@ -4,6 +4,8 @@ end tell
 
 set appPath to result
 
+set the clipboard to "{popclip text}"
+
 if application id "org.goldendict" is running then
 	tell application id "org.goldendict"
 		do shell script (appPath & "/Contents/MacOS/GoldenDict '{popclip text}'")
